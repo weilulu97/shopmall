@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wll.mapper.ImageMapper">
+
+    <!--    path目前先存图片编码后的字符串-->
+    <insert id="insert">
+        insert into imagepath(goodId, path)
+        values (#{goodId}, #{filePath})
+    </insert>
+
+    <select id="queryPathByGoodId" parameterType="int" resultType="ImagePath">
+        select *
+        from imagepath
+        where goodId = #{goodId}
+    </select>
+
+</mapper>
